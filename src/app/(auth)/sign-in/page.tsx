@@ -15,8 +15,9 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { useToast } from '@/components/ui/use-toast';
+
 import { signInSchema } from '@/schemas/signInSchema';
+import { useToast } from '@/hooks/use-toast';
 
 export default function SignInForm() {
   const router = useRouter();
@@ -91,7 +92,7 @@ export default function SignInForm() {
                 </FormItem>
               )}
             />
-            <Button className='w-full' type="submit" >Sign In</Button>
+            <Button className='w-full' type="submit">Sign In</Button>
           </form>
         </Form>
         <div className="text-center mt-4">
