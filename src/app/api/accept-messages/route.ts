@@ -9,7 +9,7 @@ export async function POST(request: Request)
     await dbConnect()
 
     const session = await getServerSession(authOptions)
-    const user: User = session?.user
+    const user: User = session?.user as User
 
     if(!session || !session.user)
     {
@@ -57,7 +57,7 @@ export async function POST(request: Request)
             )
         }
     } catch (error) {
-        console.log("failes to update user status to accept messages")
+        console.log("failes to update user status to accept messages", error)
         return Response.json(
             {
                 success:false,
